@@ -62,3 +62,10 @@ jobs:
           HOST: ${{ env.HOST }}
           PORT: ${{ env.PORT }}
 
+      - name: Деплой
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: expect /home/alexreg/ci_cd/deploy.exp
