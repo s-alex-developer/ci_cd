@@ -24,7 +24,7 @@ class ProductViewSet(ModelViewSet):
         """ Возвращает продукт с указанным id """
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid()
-        product_id = 1
+        product_id = 3
         response = Product.objects.get(id=product_id)
         serializer = self.serializer_class(response)
 
